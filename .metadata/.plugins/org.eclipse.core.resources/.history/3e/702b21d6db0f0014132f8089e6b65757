@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">InputType</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="last_name_">Last name:</string>
+    <string name="_last_name_hint">請輸入姓氏</string>
+    <string name="first_name_">First name:</string>
+    <string name="_first_name_hint">請輸入名字</string>
+    <string name="_phone">電話:</string>
+    <string name="_phone_hint">(02)25318888</string>
+    <string name="_ok">確定</string>
+    <string name="phone_">Phone:</string>
+    <string name="_btn_color">變色</string>
+    <string name="_red">紅: ?</string>
+
+</resources>

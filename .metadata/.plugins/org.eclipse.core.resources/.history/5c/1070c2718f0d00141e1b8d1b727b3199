@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Test</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hi_bmi">Hi BMI</string>
+    <string name="_kg_">體重 (kg)</string>
+    <string name="_cm_">身高 (cm)</string>
+    <string name="_bmi_">計算 BMI 值</string>
+    <string name="about_title">關於BMI</string>
+    <string name="about_content">Android BMI Calc\n作者:Evelyn\n </string>
+    <string name="btn_okay">確認</string>
+    <string name="input_error">打錯了嗎？只能輸入數字喲</string>
+    <string name="homepage_label">首頁</string>
+    <string name="homepage_uri">http://androidbmi.googlecode.com/</string>
+    <string name="btn_report">report</string>
+
+</resources>

@@ -1,0 +1,12 @@
+1405835694683	Extracts string 'First name:' into R.string.first_name_
+1405835791406	Extracts string '請輸入名字' into R.string._first_name_hint
+1405836188258	Rename field 'editText1'
+1405836202418	Rename field 'editText2'
+1405836339468	Extracts string '電話:' into R.string._phone
+1405836432859	Extracts string '(02)25318888' into R.string._phone_hint
+1405836507754	Extracts string '確定' into R.string._ok
+1405837676204	Extracts string 'Phone:' into R.string.phone_
+1405839082508	Extracts string '變色' into R.string._btn_color
+1405839738319	Extracts string '紅: ?' into R.string._red
+1405839759456	Extracts string '綠: ?' into R.string._green
+1405839776999	Extracts string '藍: ?' into R.string._blue

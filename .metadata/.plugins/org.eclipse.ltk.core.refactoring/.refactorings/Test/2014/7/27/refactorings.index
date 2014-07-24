@@ -1,0 +1,5 @@
+1404382186407	Extracts string '哈囉, Bmi!' into R.string._bmi_
+1404465385055	Extracts string 'Hi BMI' into R.string.hi_bmi
+1404466258624	Extracts string '體重 (kg)' into R.string._kg_
+1404466296194	Extracts string '身高 (cm)' into R.string._cm_
+1404466304539	Extracts string '計算 BMI 值' into R.string._bmi_

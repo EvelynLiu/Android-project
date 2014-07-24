@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LinearLayout</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="last_name_">Last name:</string>
+    <string name="_last_name_hint">請輸入姓氏</string>
+    <string name="first_name_">First name:</string>
+    <string name="_first_name_hint">請輸入名字</string>
+
+</resources>

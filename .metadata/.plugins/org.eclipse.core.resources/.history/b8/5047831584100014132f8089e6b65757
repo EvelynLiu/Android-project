@@ -1,0 +1,40 @@
+package com.example.ezcounter;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        findViews();
+        setListeners();
+    }
+    
+    private TextView result;
+    private Button count;
+    
+    private void findViews(){
+    	result = (TextView) findViewById(R.id.textView1);
+    	count = (Button) findViewById(R.id.button1);
+    }
+    private OnClickListener plus = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			
+		}
+	};
+	private void setListeners(){
+		count.setOnClickListener(plus);
+	}
+}

@@ -1,0 +1,72 @@
+package com.example.linearlayout;
+
+import java.util.Random;
+
+import android.R.integer;
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        findViews();
+        setListeners();
+    }
+    
+    private EditText sname, fname, phone;
+    private TextView txv, txvR, txvG, txvB;
+    private Button btn_ok, btn_color;
+    private View colorblock;
+    
+    private void findViews(){
+    	sname = (EditText) findViewById(R.id.surName);
+    	fname = (EditText) findViewById(R.id.firstName);
+    	phone = (EditText) findViewById(R.id.phone);
+    	txv = (TextView) findViewById(R.id.txv);
+    	txvB = (TextView) findViewById(R.id.txvB);
+    	txvG = (TextView) findViewById(R.id.txvG);
+    	txvR = (TextView) findViewById(R.id.txvR);
+    	btn_ok = (Button) findViewById(R.id.button1);
+    	btn_color = (Button) findViewById(R.id.button2);
+    	colorblock = (View) findViewById(R.id.colorBlock);
+    }
+    private OnClickListener getData = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			txv.setText(sname.getText().toString()+fname.getText().toString()+"的電話是"+phone.getText().toString());
+		}
+	};
+	private OnClickListener changeColor = new OnClickListener() {
+		Random x = new Random();
+		int red = x.nextInt(256);
+		int green = x.nextInt(256);
+		int blue = x.nextInt(256);
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			txvR.setText(R.string._red+red);
+			txvR.setTextColor(Color.rgb(red, 0, 0));
+			txvG.setText(R.string._green+green);
+			txvG.setTextColor(Color.rgb(0, green, 0));
+			txvB.setText(R.string._blue+blue);
+			txvB.setTextColor(Color.rgb(0, 0, blue));
+			colorblock.setBackgroundColor(Color.rgb(red, green, blue));
+		}
+	};
+	private void setListeners(){
+		btn_ok.setOnClickListener(getData);
+		btn_color.setOnClickListener(changeColor);
+	}
+}

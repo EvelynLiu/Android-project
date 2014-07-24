@@ -1,0 +1,8 @@
+1405928423369	Change Layout
+1405929198256	Extracts string '消耗能量(仟卡/公斤/小時):' into R.string._rate
+1405929211672	Extracts string '輸入體重(公斤):' into R.string._weight
+1405929240553	Extracts string '輸入運動時間(小時):' into R.string._time
+1405929803349	Rename field 'editText1'
+1405929818390	Rename field 'editText2'
+1405930006623	Extracts string '計算' into R.string._calculate
+1406000169847	Delete element

@@ -1,0 +1,3 @@
+1405678073420	Change Layout
+1405678121846	Extracts string 'Last name:' into R.string.last_name_
+1405678252023	Extracts string '請輸入姓氏' into R.string._last_name_hint

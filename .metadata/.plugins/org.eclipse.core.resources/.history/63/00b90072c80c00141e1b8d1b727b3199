@@ -1,0 +1,71 @@
+package com.example.test;
+
+import java.text.DecimalFormat;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        findViews();
+        setListeners();
+    }
+    
+    private Button button_calc;
+    private EditText field_height;
+    private EditText field_weight;
+    private TextView view_result;
+    private TextView view_suggest;
+    
+    private void findViews()
+    {
+        button_calc = (Button) findViewById(R.id.submit);
+        field_height = (EditText) findViewById(R.id.height);
+        field_weight = (EditText) findViewById(R.id.weight);
+        view_result = (TextView) findViewById(R.id.result);
+        view_suggest = (TextView) findViewById(R.id.suggest);
+    }
+
+    //Listen for button clicks
+    private void setListeners() {
+         button_calc.setOnClickListener(calcBMI);
+    }
+    
+    private void openOptionsDialog() {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setTitle(R.string.about_title);
+        dialog.setMessage(R.string.about_content);
+        dialog.show();
+    }
+    
+    private OnClickListener calcBMI = new OnClickListener() {	
+		@Override
+		public void onClick(View v) {
+			DecimalFormat nf = new DecimalFormat("0.0");
+			double height = Double.parseDouble(field_height.getText().toString())/100;
+			double weight = Double.parseDouble(field_weight.getText().toString());
+			double BMI = weight / (height * height);
+			view_result.setText("Your BMI is "+nf.format(BMI));			
+			if(BMI>25)
+				view_suggest.setText(R.string.advice_heavy);
+			else if(BMI<20)
+				view_suggest.setText(R.string.advice_light);
+			else 
+				view_suggest.setText(R.string.advice_average);
+			openOptionsDialog();
+		}
+	}; 
+}
