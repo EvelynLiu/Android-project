@@ -2,9 +2,10 @@
 <resources>
 
     <string name="app_name">Tabtest</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">搜尋</string>
+    <string name="title_section2">收藏案件</string>
+    <string name="title_section3">會員刊登</string>
+    <string name="title_section4">更多</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 

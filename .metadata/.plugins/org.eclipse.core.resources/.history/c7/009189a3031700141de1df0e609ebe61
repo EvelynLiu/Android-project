@@ -1,0 +1,104 @@
+package com.example.map;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import android.R.integer;
+import android.app.Activity;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+
+
+public class MainActivity extends Activity implements LocationListener{
+	
+	TextView txv;
+	GoogleMap map;
+	int MIN_TIME = 5000;
+	float MIN_DIST = 5;
+	LocationManager mgr;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        txv = (TextView) findViewById(R.id.txv);
+        mgr = (LocationManager) getSystemService(LOCATION_SERVICE);
+        //google map物件，此物件可操作地圖
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.mapView)).getMap();
+        //顯示“我的位置”圖示按鈕
+        map.setMyLocationEnabled(true);
+        //設定地圖模式為普通街道模式
+        map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        //將縮放級數設為18
+        map.moveCamera(CameraUpdateFactory.zoomTo(18));
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+	@Override
+	public void onLocationChanged(Location location) {
+		// TODO Auto-generated method stub
+		if(location != null){
+			txv.setText(String.format("緯度 %.4f, 經度 %.4f (%s 定位)", location.getLatitude(),location.getLongitude(),location.getProvider()));
+			//將地圖中心移動至目前位置
+			map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
+			map.addMarker(new MarkerOptions()
+	        .position(new LatLng(23.5, 124))
+	        .title("Hello world"));
+			map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+			//更改縮放級數
+			map.moveCamera(CameraUpdateFactory.zoomTo(16));
+		}
+		else{
+			txv.setText("暫時無法取得資訊...");
+		}
+	}
+
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
+}
